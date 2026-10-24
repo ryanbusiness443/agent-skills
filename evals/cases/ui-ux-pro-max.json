@@ -1,0 +1,30 @@
+{
+  "skill_name": "ui-ux-pro-max",
+  "trigger": {
+    "positive": [
+      { "prompt": "Pick a color palette and font pairing for our wellness app landing page", "top_k": 1 },
+      { "prompt": "Generate a design system for a new SaaS analytics product", "top_k": 1 },
+      { "prompt": "What visual style should this fintech dashboard use?", "top_k": 3 },
+      { "prompt": "Choose the typography and spacing scale for a portfolio site", "top_k": 3 }
+    ],
+    "negative": [
+      { "prompt": "Build an accessible modal component with keyboard support", "owner": "frontend-ui-engineering" },
+      { "prompt": "Optimize the slow database indexes", "owner": "performance-optimization" }
+    ]
+  },
+  "evals": [
+    {
+      "id": 1,
+      "kind": "dialogue",
+      "prompt": "We're starting a booking site for a small yoga studio. What should it look like?",
+      "expected_output": "A design system grounded in the skill's search tool, not invented from taste",
+      "files": [],
+      "expectations": [
+        "Runs or cites the --design-system search rather than inventing a palette from memory",
+        "Recommends a style, palette, and font pairing tied to the wellness product type",
+        "Calls out at least one anti-pattern to avoid and a contrast or accessibility requirement",
+        "Does not assume a frontend stack without detecting it or asking"
+      ]
+    }
+  ]
+}
